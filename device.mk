@@ -183,6 +183,7 @@ PRODUCT_ODM_PROPERTIES += \
 
 # Overlay
 PRODUCT_PACKAGES += \
+    AOSPABGTSettings \
     BGTCarrierConfig \
     BGTFrameworks \
     BGTSystemUI \
