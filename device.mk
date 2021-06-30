@@ -78,6 +78,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Display
 PRODUCT_VENDOR_PROPERTIES += \
+    persist.sys.sf.native_mode=0 \
     ro.surface_flinger.set_touch_timer_ms=200
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
