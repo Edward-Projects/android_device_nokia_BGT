@@ -147,6 +147,13 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_ODM_PROPERTIES += \
     ro.vendor.qti.va_odm.support=1
 
+# Overlay
+PRODUCT_PACKAGES += \
+    BGTCarrierConfig \
+    BGTFrameworks \
+    BGTSystemUI \
+    BGTTelephony
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
