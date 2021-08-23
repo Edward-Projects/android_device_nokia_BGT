@@ -18,7 +18,34 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 
+# Audio
+PRODUCT_ODM_PROPERTIES += \
+    ro.vendor.audio.sdk.fluencetype=fluence \
+    vendor.audio.adm.buffering.ms=2 \
+    vendor.audio.hal.output.suspend.supported=true \
+    vendor.audio.offload.track.enable=true
+
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.audio.offload.buffer.size.kb=32 \
+    vendor.audio.offload.gapless.enabled=true \
+    persist.vendor.audio.ambisonic.capture=false
+
+# Bluetooth
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
+    persist.sys.fflag.override.settings_bluetooth_hearing_aid=true \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptiver2 \
+    persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.soc=cherokee \
+    ro.bluetooth.a2dp_offload.supported=true \
+    vendor.bluetooth.soc=ath3k \
+    vendor.hw.fm.init=0
+
 # Camera
+PRODUCT_VENDOR_PROPERTIES += \
+    camera.disable_zsl_mode=true
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
@@ -40,13 +67,28 @@ PRODUCT_PACKAGES += \
 
 # Crypto
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.crypto.volume.filenames_mode=aes-256-cts
+    ro.crypto.volume.filenames_mode=aes-256-cts \
+    ro.hardware.keystore_desede=true
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Display
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.surface_flinger.set_touch_timer_ms=200
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sf.use_latest_hwc_vsync_period=0
+
+# Dispaly (Adreno)
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
+    ro.opengles.version=196610
+
 # DPM
 PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.dpm.feature=11 \
     persist.vendor.dpmhalservice.enable=1
 
 # DRM
@@ -89,6 +131,10 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
 
+# Media
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.media.recorder-max-base-layer-fps=60
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
@@ -96,6 +142,10 @@ PRODUCT_SOONG_NAMESPACES += \
 # Netflix
 PRODUCT_VENDOR_PROPERTIES += \
     ro.netflix.bsp_rev=Q7250-19133-1
+
+# ODM
+PRODUCT_ODM_PROPERTIES += \
+    ro.vendor.qti.va_odm.support=1
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -106,6 +156,13 @@ TARGET_BOARD_PLATFORM := lito
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
     init
+
+# RIL
+PRODUCT_VENDOR_PROPERTIES += \
+    ril.subscription.types=NV,RUIM \
+    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
+    ro.telephony.default_network=26,26 \
+    sys.vendor.shutdown.waittime=500
 
 # Sensor
 PRODUCT_COPY_FILES += \
@@ -122,11 +179,23 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
+# SoC
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.soc.model=SM7250
+
 # Telephony
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml
+
+# Time Service
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.timed.enable=true
+
+# VA
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.vendor.qti.va_aosp.support=1
 
 # Vendor Service Manager
 PRODUCT_PACKAGES += \
@@ -135,6 +204,11 @@ PRODUCT_PACKAGES += \
 # Verified Boot
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
+
+# WFD
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
 
 # WLAN
 PRODUCT_COPY_FILES += \
