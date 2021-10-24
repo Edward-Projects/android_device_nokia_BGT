@@ -134,7 +134,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qti.dcvs.sh \
-    init.target.rc
+    init.target.rc \
+    init.BGT.rc \
+    ueventd.BGT.rc
 
 # IR
 PRODUCT_COPY_FILES += \

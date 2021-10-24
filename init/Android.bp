@@ -11,6 +11,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.BGT.rc",
+    src: "init.BGT.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.target.rc",
     src: "init.target.rc",
     sub_dir: "init/hw",
@@ -21,4 +28,11 @@ sh_binary {
     name: "init.qti.dcvs.sh",
     src: "init.qti.dcvs.sh",
     vendor: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.BGT.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.BGT.rc",
+    device_specific: true,
 }
