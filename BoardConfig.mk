@@ -125,6 +125,12 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2023-11-01
+
+# Vendor
+include vendor/nokia/BGT/BoardConfigVendor.mk
+
 # Vintf
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/configs/vintf/nokia_vendor_framework_compatibility_matrix.xml
