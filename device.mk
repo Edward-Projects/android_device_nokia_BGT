@@ -1,10 +1,10 @@
 #
-# Copyright (C) 2023 Project Mia
+# Copyright (C) 2024 AOSPA
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/qcom/lito
+DEVICE_PATH := device/nokia/BGT
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
@@ -98,9 +98,9 @@ PRODUCT_PACKAGES += \
 
 # Overlay
 PRODUCT_PACKAGES += \
-    LitoFrameworks \
-    LitoSettings \
-    LitoSystemUI
+    BGTFrameworks \
+    BGTSettings \
+    BGTSystemUI
 
 # Partitions
 PRODUCT_BUILD_ODM_IMAGE := true
@@ -148,15 +148,12 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-ScopedWakelock \
     libsensorndkbridge
 
-# Storage
-PRODUCT_CHARACTERISTICS := nosdcard
-
 # Vendor
-$(call inherit-product, vendor/qcom/qrd/lito/lito-vendor.mk)
+$(call inherit-product, vendor/nokia/BGT/BGT-vendor.mk)
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service.qti_lito
+    vendor.qti.hardware.vibrator.service.nokia_BGT
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:vendor/etc/excluded-input-devices.xml

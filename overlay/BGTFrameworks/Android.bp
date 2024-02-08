@@ -1,10 +1,10 @@
 //
-// Copyright (C) 2023 Project Mia
+// Copyright (C) 2024 AOSPA
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 runtime_resource_overlay {
-    name: "LitoSettings",
+    name: "BGTFrameworks",
     vendor: true,
 }

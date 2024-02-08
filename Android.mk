@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2023 Project Mia
+# Copyright (C) 2024 AOSPA
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter lito, $(TARGET_DEVICE)),)
+ifneq ($(filter BGT, $(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

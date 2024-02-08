@@ -49,6 +49,10 @@ void vendor_load_properties() {
             OverrideProperty("ro.vendor.qti.soc_model", "SM7250");
             OverrideProperty("vendor.display.lcd_density", "540");
             break;
+        case 440: // SM7250
+            OverrideProperty("ro.vendor.qti.soc_model", "SM7250");
+            OverrideProperty("vendor.display.lcd_density", "400");
+            break;
         case 434: // SM6350
             OverrideProperty("ro.vendor.qti.soc_model", "SM6350");
             OverrideProperty("vendor.display.lcd_density", "440");

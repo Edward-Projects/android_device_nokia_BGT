@@ -1,14 +1,14 @@
 //
-// Copyright (C) 2023 Project Mia
+// Copyright (C) 2024 AOSPA
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 cc_library_static {
-    name: "libinit_lito",
+    name: "libinit_BGT",
     recovery_available: true,
     shared_libs: ["libbase"],
-    srcs: ["init_lito.cpp"],
+    srcs: ["init_BGT.cpp"],
 }
 
 prebuilt_etc {

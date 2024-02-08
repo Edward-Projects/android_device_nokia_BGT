@@ -27,7 +27,7 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#define LOG_TAG "vendor.qti.hardware.vibrator.service.qti_lito"
+#define LOG_TAG "vendor.qti.hardware.vibrator.service.nokia_BGT"
 
 #include <android-base/logging.h>
 #include <android/binder_manager.h>

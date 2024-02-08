@@ -1,2 +1,2 @@
 # Vibrator
-/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.qti_lito    u:object_r:hal_vibrator_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.nokia_BGT    u:object_r:hal_vibrator_default_exec:s0
