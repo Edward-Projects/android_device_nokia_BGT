@@ -1,4 +1,4 @@
-# All the blobs are from extracted from Nokia/BabyGroot_00WW/BGT_sprout:12/SKQ1.210821.001/00WW_3_38C:user/release-keys
+# All the blobs are from extracted from Nokia/BabyGroot_00WW/BGT_sprout:12/SKQ1.210821.001/00WW_3_49N:user/release-keys
 
 # ACDB
 vendor/etc/acdbdata/MTP/lito-lagoonmtp-snd-card/MTP_Lagoon_Bluetooth_cal.acdb
@@ -140,7 +140,6 @@ vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib/libbluetooth_audio_session_qti.so
-vendor/lib/libbluetooth_audio_session_qti_2_1.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbtnv.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
@@ -339,7 +338,7 @@ vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 
 # ConfigStore
-vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.1-service
+vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/configstore/wigig.xml
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
