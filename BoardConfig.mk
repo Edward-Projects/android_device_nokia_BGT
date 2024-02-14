@@ -43,9 +43,6 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
-# DTBO
-BOARD_KERNEL_SEPARATED_DTBO := true
-
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     console=ttyMSM0,115200,n8 \
@@ -141,3 +138,6 @@ DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/vintf/manifest-generic.xml \
     $(DEVICE_PATH)/configs/vintf/manifest-qva.xml \
     $(DEVICE_PATH)/configs/vintf/nokia_manifest.xml
+
+# Prebuilt-Kernel
+include device/nokia/BGT-kernel/BoardConfigKernel.mk

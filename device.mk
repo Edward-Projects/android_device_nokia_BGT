@@ -214,7 +214,10 @@ TARGET_BOARD_PLATFORM := lito
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libraries/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# QTI
+# Prebuilt Kernel
+$(call inherit-product, device/nokia/BGT-kernel/kernel.mk)
+
+# QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \
     av \
