@@ -43,9 +43,6 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
-# DTBO
-BOARD_KERNEL_SEPARATED_DTBO := true
-
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := \
@@ -67,8 +64,8 @@ BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_RAMDISK_USE_LZ4    := true
-KERNEL_DEFCONFIG         := vendor/groot_defconfig
-KERNEL_FRAGMENT_CONFIG := vendor/debugfs.config
+# KERNEL_DEFCONFIG         := vendor/groot_defconfig
+# KERNEL_FRAGMENT_CONFIG := vendor/debugfs.config
 
 # GPS
 LOC_HIDL_VERSION = 4.0
@@ -152,3 +149,6 @@ DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/vintf/manifest.xml \
     $(DEVICE_PATH)/configs/vintf/manifest-generic.xml \
     $(DEVICE_PATH)/configs/vintf/manifest-qva.xml
+
+# Prebuilt-Kernel
+include device/nokia/BGT-kernel/BoardConfigKernel.mk

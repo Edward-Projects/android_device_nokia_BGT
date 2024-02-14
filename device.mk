@@ -106,6 +106,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_BUILD_ODM_IMAGE := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Prebuilt Kernel
+$(call inherit-product, device/nokia/BGT-kernel/kernel.mk)
+
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
