@@ -306,6 +306,7 @@ vendor/lib64/com.qti.feature2.supershot.so
 vendor/lib64/com.qti.feature2.swmf.so
 vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
+vendor/lib64/hw/libcolddew.so
 vendor/lib64/libbitmlengine.so
 vendor/lib64/libcamera2ndk_vendor.so
 vendor/lib64/libcamera_nn_stub.so
