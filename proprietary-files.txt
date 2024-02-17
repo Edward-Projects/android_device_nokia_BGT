@@ -581,6 +581,9 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 
+# init
+vendor/etc/init/hw/init.qcom.factory.rc
+
 # Media
 vendor/lib/libAlacSwDec.so
 vendor/lib/libApeSwDec.so
@@ -646,6 +649,9 @@ vendor/lib64/vendor.qti.hardware.factory@1.1.so
 # MM OSAL
 vendor/lib/libmmosal.so
 vendor/lib64/libmmosal.so
+
+# Modem
+vendor/bin/mbn_ota_customization.sh
 
 # NFC
 vendor/etc/libnfc-mtp-SN100.conf

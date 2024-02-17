@@ -92,6 +92,34 @@ on boot
     setprop vendor.usb.controller a600000.dwc3
 #Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
+# fpc-fingerprint
+    chown system system /sys/devices/platform/soc/soc:fpc1020/clk_enable
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/clk_enable
+    chown system system /sys/devices/platform/soc/soc:fpc1020/device_prepare
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/device_prepare
+    chown system system /sys/devices/platform/soc/soc:fpc1020/driver_override
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/driver_override
+    chown system system /sys/devices/platform/soc/soc:fpc1020/handle_wakelock
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/handle_wakelock
+    chown system system /sys/devices/platform/soc/soc:fpc1020/hw_reset
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/hw_reset
+    chown system system /sys/devices/platform/soc/soc:fpc1020/irq
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/irq
+    chown system system /sys/devices/platform/soc/soc:fpc1020/modalias
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/modalias
+    chown system system /sys/devices/platform/soc/soc:fpc1020/pinctl_set
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/pinctl_set
+    chown system system /sys/devices/platform/soc/soc:fpc1020/power
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/power
+    chown system system /sys/devices/platform/soc/soc:fpc1020/regulator_enable
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/regulator_enable
+    chown system system /sys/devices/platform/soc/soc:fpc1020/uevent
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/uevent
+    chown system system /sys/devices/platform/soc/soc:fpc1020/wakeup_enable
+    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/wakeup_enable
+
+# added for vibrator read calibration parameter
+    write /sys/class/leds/vibrator/cali_lra 1
 
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m

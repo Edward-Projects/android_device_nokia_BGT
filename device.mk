@@ -82,7 +82,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     fstab.qcom.ramdisk \
-    init.target.rc
+    init.target.rc \
+    ueventd.BGT.rc
 
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \

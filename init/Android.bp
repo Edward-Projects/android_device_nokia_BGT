@@ -4,13 +4,6 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-cc_library_static {
-    name: "libinit_BGT",
-    recovery_available: true,
-    shared_libs: ["libbase"],
-    srcs: ["init_BGT.cpp"],
-}
-
 prebuilt_etc {
     name: "fstab.qcom",
     src: "fstab.qcom",
@@ -19,8 +12,28 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.BGT.rc",
+    src: "init.BGT.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.target.rc",
     src: "init.target.rc",
     sub_dir: "init/hw",
     vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.dcvs.sh",
+    src: "init.qti.dcvs.sh",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.BGT.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.BGT.rc",
+    device_specific: true,
 }

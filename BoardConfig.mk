@@ -70,10 +70,6 @@ BOARD_RAMDISK_USE_LZ4    := true
 # GPS
 LOC_HIDL_VERSION = 4.0
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_BGT
-TARGET_RECOVERY_DEVICE_MODULES := libinit_BGT
-
 # Partition
 AB_OTA_PARTITIONS := \
     boot \
