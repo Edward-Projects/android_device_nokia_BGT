@@ -30,6 +30,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.audio.offload.gapless.enabled=true \
     persist.vendor.audio.ambisonic.capture=false
 
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 # Bluetooth
 PRODUCT_VENDOR_PROPERTIES += \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
