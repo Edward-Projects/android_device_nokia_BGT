@@ -1,0 +1,49 @@
+<!--
+     Copyright (C) 2023 Paranoid Android
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest version="1.0" type="device">
+    <!-- AudioHAL ext -->
+    <hal format="hidl">
+        <name>vendor.qti.hardware.audiohalext</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IAudioHalExt/default</fqname>
+    </hal>
+    <!-- Bluetooth -->
+    <hal format="hidl">
+        <name>vendor.qti.hardware.btconfigstore</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IBTConfigStore/default</fqname>
+    </hal>
+    <!-- IR -->
+    <hal format="hidl">
+        <name>android.hardware.ir</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IConsumerIr/default</fqname>
+    </hal>
+    <!-- Sensors -->
+    <hal format="hidl">
+        <name>android.hardware.sensors</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::ISensors/default</fqname>
+    </hal>
+    <!-- Biometrics -->
+    <hal format="hidl">
+        <name>com.fingerprints.extension</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IFingerprintEngineering/default</fqname>
+        <fqname>@1.0::IFingerprintNavigation/default</fqname>
+        <fqname>@1.0::IFingerprintSensorTest/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.biometrics.fingerprint</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.1::IBiometricsFingerprint/default</fqname>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.fingerprint</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IQtiExtendedFingerprint/default</fqname>
+    </hal>
+</manifest>
