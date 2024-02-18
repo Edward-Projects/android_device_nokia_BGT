@@ -186,6 +186,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.2.vendor
 
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 # ODM
 PRODUCT_ODM_PROPERTIES += \
     ro.vendor.qti.va_odm.support=1
