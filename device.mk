@@ -4,6 +4,34 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/nokia/BGT
+
+# A/B
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl-qti \
+    android.hardware.boot@1.1-impl-qti.recovery \
+    android.hardware.boot@1.1-service \
+    checkpoint_gc \
+    otapreopt_script \
+    update_engine \
+    update_engine_client \
+    update_engine_sideload \
+    update_verifier
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=ext4 \
+    POSTINSTALL_OPTIONAL_vendor=true
+
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -12,7 +40,16 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # API
+BOARD_SHIPPING_API_LEVEL := 29
+BOARD_API_LEVEL := 29
 PRODUCT_SHIPPING_API_LEVEL := 29
+
+# Architecture
+TARGET_BOARD_PLATFORM := lito
+TARGET_BOOTLOADER_BOARD_NAME := lito
+
+# AVB
+BOARD_AVB_ENABLE := true
 
 # Atrace
 PRODUCT_PACKAGES += \
@@ -116,8 +153,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-# Fastboot
+# Fastbootd
 PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
 # Fingerprint
@@ -130,9 +168,6 @@ PRODUCT_PACKAGES += \
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
-
-# GPS
-LOC_HIDL_VERSION := 4.0
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/gps/,$(TARGET_COPY_OUT_VENDOR)/etc)
