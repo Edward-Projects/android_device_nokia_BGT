@@ -673,6 +673,33 @@ vendor/firmware/lagoon_ipa_fws.b04
 vendor/firmware/lagoon_ipa_fws.elf
 vendor/firmware/lagoon_ipa_fws.mdt
 
+# Iris
+vendor/bin/irisConfig
+vendor/firmware/2nd-iris3.fw
+vendor/firmware/2nd_iris3_inParm11.txt
+vendor/firmware/2nd_iris3_inParm2.txt
+vendor/firmware/2nd_iris3_inParm5.txt
+vendor/firmware/2nd_iris3_inParm8.txt
+vendor/firmware/File_iris3_inParm11.txt
+vendor/firmware/File_iris3_inParm2.txt
+vendor/firmware/File_iris3_inParm5.txt
+vendor/firmware/File_iris3_inParm8.txt
+vendor/firmware/iris3.fw
+vendor/firmware/iris3_inParm11.txt
+vendor/firmware/iris3_inParm2.txt
+vendor/firmware/iris3_inParm5.txt
+vendor/firmware/iris3_inParm8.txt
+vendor/lib/libiris_ioctl_wrapper.so
+vendor/lib/libirisService.so
+vendor/lib/libpwirismcfcheck.so
+vendor/lib/libpwirisPCS.so
+vendor/lib/libpwirispq.so
+vendor/lib64/libiris_ioctl_wrapper.so
+vendor/lib64/libirisService.so
+vendor/lib64/libpwirismcfcheck.so
+vendor/lib64/libpwirisPCS.so
+vendor/lib64/libpwirispq.so
+
 # IRQ balance
 vendor/bin/msm_irqbalance
 vendor/etc/msm_irqbalance.conf
