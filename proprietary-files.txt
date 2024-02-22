@@ -515,6 +515,7 @@ vendor/lib64/vendor.display.config@1.10.so
 vendor/lib64/vendor.display.config@1.11.so
 vendor/lib64/vendor.display.config@2.0.so
 vendor/lib64/vendor.display.postproc@1.0.so
+vendor/lib64/vendor.pixelworks.hardware.display@1.0.so
 
 # DPM
 vendor/bin/dpmQmiMgr
