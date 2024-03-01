@@ -24,6 +24,22 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- Display -->
+    <hal format="hidl" optional="true">
+        <name>android.hardware.graphics.composer3</name>
+        <interface>
+            <name>IComposer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <!-- Net -->
+    <hal format="aidl" optional="true">
+        <name>android.hardware.net.nlinterceptor</name>
+        <interface>
+            <name>IInterceptor</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <!-- Sensors -->
     <hal format="hidl" optional="true">
         <name>android.hardware.sensors</name>
